@@ -9,7 +9,7 @@ body.hideMode.awake.hideHomepageSidebar ytd-mini-guide-renderer[role="navigation
 body.hideMode.awake.hideHomepageSidebar tp-yt-app-drawer[role="navigation"], /* maximized sidebar */
 body.hideMode.awake.hideHomepageSidebar yt-icon-button#guide-button.ytd-masthead, /* menu button to open sidebar */
 body.hideMode.awake.hidePlayerRelated #related /* hide related sidebar on video player */,
-body.hideMode.awake.hidePlayerEndwall .videowall-endscreen /* hide endwall on video player*/,
+body.hideMode.awake.hidePlayerEndwall .ytp-fullscreen-grid[title="More videos (v)"] /* hide endwall on video player*/,
 body.hideMode.awake.hidePlayerComments .ytd-comments /* hide comments on video player */ {
   display: none;
 }
