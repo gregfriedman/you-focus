@@ -68,7 +68,7 @@ function setAwake() {
         awake: isAwake(
           result.scheduleStart,
           result.scheduleEnd,
-          result.enableSchedule
+          result.enableSchedule,
         ),
       })
     }
@@ -97,5 +97,4 @@ function setVisibilities() {
 
   // Special case because hidden content was flashing on refresh (hide.css is hiding these initially)
   document.querySelector('body').style.visibility = 'visible'
-  document.querySelector('#guide-content').style.visibility = 'visible'
 }

@@ -1,6 +1,5 @@
 /* Hiding elements on page load so no flash */
-body,
-#guide-content {
+body {
   visibility: hidden;
 }
 
