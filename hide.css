@@ -35,8 +35,25 @@ body.hideMode.awake.hideShorts yt-chip-cloud-chip-renderer[chip-style="STYLE_HOM
 body.hideMode.awake.hideShorts
   ytd-video-renderer:has(
     ytd-thumbnail-overlay-time-status-renderer[overlay-style="SHORTS"]) /* horizontal shorts in video feed (click shorts video feed filter button to view) */,
-body.hideMode.awake.hideShorts ytd-mini-guide-entry-renderer[aria-label="Shorts"], /* shorts button in minimized side bar */
-body.hideMode.awake.hideShorts ytd-guide-entry-renderer:has(a[title="Shorts"]) /* shorts button in maximized side bar */ ,
-body.hideMode.awake.hideShorts ytd-shorts {
+body.hideMode.awake.hideShorts ytd-mini-guide-entry-renderer:has(a[title="Shorts"]), /* shorts button in minimized side bar */
+body.hideMode.awake.hideShorts ytd-guide-entry-renderer:has(a[title="Shorts"]) /* shorts button in maximized side bar */ {
   display: none;
+}
+
+/* On the /shorts watch page, show the requested short (the first reel) but hide every
+   recommended short below it. A ~ A matches each reel preceded by another, i.e. all but #0. */
+body.hideMode.awake.hideShorts
+  .reel-video-in-sequence-new
+  ~ .reel-video-in-sequence-new {
+  display: none;
+}
+
+/* Note shown where the recommended shorts used to be */
+body.hideMode.awake.hideShorts #shorts-inner-container::after {
+  content: 'YouFocus is hiding recommended shorts';
+  display: block;
+  text-align: center;
+  padding: 1rem;
+  color: rgb(74, 74, 74);
+  font-size: 14px;
 }

@@ -12,8 +12,6 @@ const defaultSettings = {
   scheduleEnd: '17:00',
 }
 
-let muteIntervalId // set this when a user tries to visit the /shorts page
-
 window.onload = function () {
   localStorage.setItem('lastEvent', Date.now())
   setAwake()
@@ -77,20 +75,6 @@ function setAwake() {
   })
 }
 
-function muteAllVideos() {
-  const videos = document.querySelectorAll('video')
-  videos.forEach((video) => {
-    video.muted = true
-  })
-}
-
-function unmuteAllVideos() {
-  const videos = document.querySelectorAll('video')
-  videos.forEach((video) => {
-    video.muted = false
-  })
-}
-
 function setVisibilities() {
   chrome.storage.sync.get(defaultSettings, function (result) {
     const hideOptions = [
@@ -109,23 +93,6 @@ function setVisibilities() {
         ? document.body.classList.add(key)
         : document.body.classList.remove(key)
     })
-
-    if ((!result.hideShorts || !result.isAwake) && muteIntervalId) {
-      clearInterval(muteIntervalId)
-      muteIntervalId = null
-      unmuteAllVideos()
-    }
-
-    if (
-      result.hideMode &&
-      result.hideShorts &&
-      result.awake &&
-      window.location.pathname.startsWith('/shorts')
-    ) {
-      // Recurrently mute all shorts (YouTube periodically un-mutes)
-      muteAllVideos()
-      muteIntervalId = window.setInterval(muteAllVideos, 100)
-    }
   })
 
   // Special case because hidden content was flashing on refresh (hide.css is hiding these initially)
