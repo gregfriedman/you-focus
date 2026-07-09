@@ -1,0 +1,1 @@
+Use this folder for automated tests against the extension source files.
