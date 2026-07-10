@@ -2,8 +2,8 @@ import _ from 'lodash/fp.js'
 import { JSDOM } from 'jsdom';
 
 /** Return true if the href does not end with .css */
-const isMissingExtension = href => !href?.endsWith('.css')
-
+const isMissingExtension = href => href?.endsWith('.css') === false
+ 
 /**
  * Return the list of stylesheets in the html that do not have the .css
  *  extension.
