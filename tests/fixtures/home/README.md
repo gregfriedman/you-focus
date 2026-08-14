@@ -1,0 +1,1 @@
+Generate a local fixture of the home page here
