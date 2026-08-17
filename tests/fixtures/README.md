@@ -1,0 +1,1 @@
+Fixtures capture the expected output of external services such as static copies of external web pages.
