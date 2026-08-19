@@ -9,7 +9,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const fixturesDir = join(__dirname, './fixtures')
 
 describe('homepage', () => {
-  test.use({ viewport: { width: 1800, height: 1200 } })
+  test.use({ viewport: { width: 1600, height: 1200 } })
   test('only the masthead with the search bar is visible', async ({ page }) => {
     await loadFixture(page, join(fixturesDir, 'home', 'YouTube-home.html'))
     await expect(page.locator('body')).toHaveClass(/hideMode/) // main.js ran
