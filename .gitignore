@@ -9,5 +9,7 @@ node_modules/
 
 /tests/fixtures/home/**/*
 !/tests/fixtures/home/README.md
+/tests/fixtures/watch/**/*
+!/tests/fixtures/watch/README.md
 /playwright-report/
 /test-results/
