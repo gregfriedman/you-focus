@@ -23,7 +23,6 @@
     "pw:run": "playwright test",
     "pw:update": "playwright test --update-snapshots",
     "setup": "npm ci --ignore-scripts && playwright install --with-deps chromium",
-    "safe-install": "npm install --ignore-scripts",
     "test": "vitest --project unit",
     "test:integration": "vitest --project integration"
   },

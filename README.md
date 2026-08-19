@@ -61,7 +61,7 @@ We want to be able to test against the 3rd party website without actually depend
 2. Click `File > Save Page As...` and choose Format: `Webpage, Complete`
 3. Save in <project>/tests/fixtures with a name specific to which page is being saved (e.g. `YouTube-home.html`)
 4. Run `npm run fixture <project>/tests/fixtures/<saved file>` to rewrite the webpage to work as a fixture. (Scripts seem to interfere with the accurate rendering of the static HTML and stylesheets without css extension are blocked)
-5. Write a Playwright test using `page.goto('file://<fixture-path>')`
+5. Write a Playwright test which calls `gotoFixture` with the fixture path
 
 ### Visual Regression Testing
 Note that npm run test:ui (i.e. playwright test --ui) doesn't seem to reflect the injected css so don't be surprised if elements are rendered that you expect to be hidden. Fortunately the toHaveScreenshot() method does capture the correct screenshot (as long as chromium is run headed)
