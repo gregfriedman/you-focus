@@ -6,3 +6,8 @@ node_modules/
 
 # ignore temporary test files
 **/__tests__/temp/
+
+/tests/fixtures/home/**/*
+!/tests/fixtures/home/README.md
+/playwright-report/
+/test-results/

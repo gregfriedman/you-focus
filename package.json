@@ -18,14 +18,26 @@
     "test": "tests"
   },
   "scripts": {
+    "fixture": "node utils/fixtureUtils/prepareFixture.js",
+    "pw:open": "playwright test --ui",
+    "pw:run": "playwright test",
+    "pw:update": "playwright test --update-snapshots",
+    "setup": "npm ci --ignore-scripts && playwright install --with-deps chromium",
     "test": "vitest --project unit",
-    "test:integration": "vitest --project integration",
-    "install": "npm install --ignore-scripts"
+    "test:integration": "vitest --project integration"
   },
   "devDependencies": {
+    "@playwright/test": "^1.61.1",
     "jsdom": "^29.1.1",
     "lodash": "^4.18.1",
+    "prettier": "^3.9.6",
     "vitest": "^4.1.10"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "semi": false,
+    "singleQuote": true,
+    "arrowParens": "avoid"
   },
   "wallaby": {
     "autoDetect": true,
