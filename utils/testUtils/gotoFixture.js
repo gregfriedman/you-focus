@@ -1,7 +1,14 @@
 import { dirname, join } from 'node:path'
 import { existsSync } from 'node:fs'
 
-export const loadFixture = async (page, fixturePath) => {
+/**
+ * Simulates navigating to youtube.com but instead of actually making a request
+ *  to youtube it returns the html specified by the fixture  path
+ * @param {import('@playwright/test').Page} page
+ * @param {string} fixturePath - full path to the HTML fixture
+ * @return {Promise<void>}
+ */
+export const gotoFixture = async (page, fixturePath) => {
   page.on('pageerror', e => console.log('[pageerror]', e.message))
 
   await page.route('**/*', route => {
@@ -17,8 +24,8 @@ export const loadFixture = async (page, fixturePath) => {
       url.pathname === '/'
         ? fixturePath
         : join(dirname(fixturePath), decodeURIComponent(url.pathname))
-
     console.log(`[route] -> fulfill from ${file}`)
+
     return existsSync(file) ? route.fulfill({ path: file }) : route.abort()
   })
 
