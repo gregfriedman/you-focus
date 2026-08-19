@@ -66,6 +66,6 @@ We want to be able to test against the 3rd party website without actually depend
 ### Visual Regression Testing
 Note that npm run test:ui (i.e. playwright test --ui) doesn't seem to reflect the injected css so don't be surprised if elements are rendered that you expect to be hidden. Fortunately the toHaveScreenshot() method does capture the correct screenshot (as long as chromium is run headed)
 
-Run `npx playwright test` and it will run the test and launch the report if there is a failure. Use the diff tool on the report to compare the screenshots or look in the .test-results folder. If the new screenshot is correct you can run `npx playwright test --update-snapshots` or `npx playwright test tests/hide.spec.js --update-snapshots` to focus only on certain test file
+Run `npm run pw:run` and it will run the test and launch the report if there is a failure. Use the diff tool on the report to compare the screenshots or look in the .test-results folder. If the new screenshot is correct you can run `npm run pw:update` to update all snapshots or  `npx playwright test tests/hide.spec.js --update-snapshots` to focus only on certain test file
 
 If the test fails you can use `npx playwright show-report` to see the last run and find the `View trace` link to see actual network calls and errors
