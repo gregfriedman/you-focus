@@ -11,5 +11,7 @@ node_modules/
 !/tests/fixtures/home/README.md
 /tests/fixtures/watch/**/*
 !/tests/fixtures/watch/README.md
+/tests/fixtures/shorts/**/*
+!/tests/fixtures/shorts/README.md
 /playwright-report/
 /test-results/

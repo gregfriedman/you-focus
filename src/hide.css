@@ -10,6 +10,7 @@ body.hideMode.awake.hideHomepageSidebar tp-yt-app-drawer[role="navigation"], /* 
 body.hideMode.awake.hideHomepageSidebar yt-icon-button#guide-button.ytd-masthead, /* menu button to open sidebar */
 body.hideMode.awake.hidePlayerRelated #related /* hide related sidebar on video player */,
 body.hideMode.awake.hidePlayerEndwall .ytp-fullscreen-grid[title="More videos (v)"] /* hide endwall on video player*/,
+body.hideMode.awake.hidePlayerEndwall .videowall-endscreen /* hide endwall on video player*/,
 body.hideMode.awake.hidePlayerComments .ytd-comments /* hide comments on video player */ {
   display: none;
 }
@@ -36,7 +37,8 @@ body.hideMode.awake.hideShorts
   ytd-video-renderer:has(
     ytd-thumbnail-overlay-time-status-renderer[overlay-style="SHORTS"]) /* horizontal shorts in video feed (click shorts video feed filter button to view) */,
 body.hideMode.awake.hideShorts ytd-mini-guide-entry-renderer[aria-label="Shorts"], /* shorts button in minimized side bar */
-body.hideMode.awake.hideShorts ytd-guide-entry-renderer:has(a[title="Shorts"]) /* shorts button in maximized side bar */ ,
-body.hideMode.awake.hideShorts ytd-shorts {
+body.hideMode.awake.hideShorts ytd-guide-entry-renderer:has(a[title="Shorts"]) /* shorts button in maximized side bar */,
+body.hideMode.awake.hideShorts ytd-shorts .reel-video-in-sequence-new.ytd-shorts ~ .reel-video-in-sequence-new.ytd-shorts /* to support navigating to shorts, allow the first short to display but hide all subsequent ones so scrolling shorts is disabled */
+{
   display: none;
 }
