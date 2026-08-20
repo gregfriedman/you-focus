@@ -48,3 +48,21 @@ describe('watch', () => {
     })
   })
 })
+
+describe('shorts', () => {
+  test.use({ viewport: { width: 1600, height: 1200 } })
+  test('only the video player is visible', async ({ page }) => {
+    // Arrange
+    const fixture = join(fixturesDir, 'shorts/index.html')
+
+    // Act
+    await gotoFixture(page, fixture)
+
+    // Assert
+    await expect(page.locator('body')).toHaveClass(/hideMode/) // main.js ran
+    await expect(page).toHaveScreenshot('shorts-hidden.png', {
+      // mask the logo so we don't violate the Terms of Service by including YT owned content
+      mask: [page.locator('#logo')],
+    })
+  })
+})
