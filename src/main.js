@@ -1,3 +1,5 @@
+const browser = globalThis.browser ?? chrome
+
 const defaultSettings = {
   hideMode: true,
   hideHomepageVideos: true,
@@ -12,10 +14,10 @@ const defaultSettings = {
   scheduleEnd: '17:00',
 }
 
-window.onload = function () {
+window.onload = async function () {
   localStorage.setItem('lastEvent', Date.now())
-  setAwake()
-  setVisibilities()
+  await setAwake()
+  await setVisibilities()
   document.body.addEventListener('mousemove', () => {
     activeEvent()
   })
@@ -24,7 +26,7 @@ window.onload = function () {
   })
 }
 
-chrome.storage.onChanged.addListener(changes => {
+browser.storage.onChanged.addListener(changes => {
   if (changes.enableSchedule || changes.scheduleStart || changes.scheduleEnd) {
     setAwake()
   } else {
@@ -58,41 +60,38 @@ function isAwake(scheduleStart, scheduleEnd, enableSchedule) {
   )
 }
 
-function setAwake() {
-  chrome.storage.sync.get(defaultSettings, function (result) {
-    if (
-      result.awake !==
-      isAwake(result.scheduleStart, result.scheduleEnd, result.enableSchedule)
-    ) {
-      chrome.storage.sync.set({
-        awake: isAwake(
-          result.scheduleStart,
-          result.scheduleEnd,
-          result.enableSchedule
-        ),
-      })
-    }
-  })
+async function setAwake() {
+  const result = await browser.storage.sync.get(defaultSettings)
+  const awake = isAwake(
+    result.scheduleStart,
+    result.scheduleEnd,
+    result.enableSchedule
+  )
+  if (result.awake !== awake) {
+    await browser.storage.sync.set({ awake })
+  }
 }
 
-function setVisibilities() {
-  chrome.storage.sync.get(defaultSettings, function (result) {
-    const hideOptions = [
-      'hideMode',
-      'hideHomepageVideos',
-      'hideHomepageSidebar',
-      'hidePlayerRelated',
-      'hidePlayerEndwall',
-      'hidePlayerComments',
-      'hideShorts',
-      'awake',
-    ]
+async function setVisibilities() {
+  // TODO: move this up to onLoad and change this function to
+  //  render(settings) and then wrap in tests
+  const result = await browser.storage.sync.get(defaultSettings)
 
-    hideOptions.forEach(key => {
-      result[key]
-        ? document.body.classList.add(key)
-        : document.body.classList.remove(key)
-    })
+  const hideOptions = [
+    'hideMode',
+    'hideHomepageVideos',
+    'hideHomepageSidebar',
+    'hidePlayerRelated',
+    'hidePlayerEndwall',
+    'hidePlayerComments',
+    'hideShorts',
+    'awake',
+  ]
+
+  hideOptions.forEach(key => {
+    result[key]
+      ? document.body.classList.add(key)
+      : document.body.classList.remove(key)
   })
 
   // Special case because hidden content was flashing on refresh (hide.css is hiding these initially)
