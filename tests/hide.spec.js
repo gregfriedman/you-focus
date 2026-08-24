@@ -11,7 +11,7 @@ describe('homepage', () => {
   test.use({ viewport: { width: 1600, height: 1200 } })
   test('only the masthead with the search bar is visible', async ({ page }) => {
     // Arrange
-    const fixture = join(fixturesDir, 'home/YouTube-home.html')
+    const fixture = join(fixturesDir, 'home/index.html')
 
     // Act
     await gotoFixture(page, fixture)
