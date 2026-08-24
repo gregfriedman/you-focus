@@ -29,7 +29,7 @@ describe('watch', () => {
   test.use({ viewport: { width: 1600, height: 1200 } })
   test('only the video player is visible', async ({ page }) => {
     // Arrange
-    const fixture = join(fixturesDir, 'watch/YouTube-watch.html')
+    const fixture = join(fixturesDir, 'watch/index.html')
 
     // Act
     await gotoFixture(page, fixture)
