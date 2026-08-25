@@ -26,6 +26,9 @@ YouFocus creates a more productive YouTube experience by:
 - Run on Schedule Feature
 - Hide Shorts
 
+### Requirements
+Minimum Chrome browser version is 95 since that is when Promise based storage get/set was released and that allows us to also support the Browser Extension API in Safari and Firefox.
+
 ### Development
 When making code changes to the extension, you can interact with the local development version:
 1. Navigate to [chrome://extensions/](chrome://extensions/)

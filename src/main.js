@@ -1,3 +1,18 @@
+// We want to have a single extension that can work in Chrome, Safari, and Firefox so
+//  we aim to leverage the standard WebExtensions API through a single `browser` object.
+//
+// From Chrome 148, all Chrome Extension APIs are available under the `browser` namespace
+//  in addition to the existing `chrome` namespace. But just in case there are existing
+//  users on earlier versions, we always alias browser to chrome if the global browser is not defined
+//  @see https://developer.chrome.com/docs/extensions/develop/concepts/browser-namespace
+//
+// Since Chrome 95+ supports returning Promises from `storage.get` and `storage.set`, we
+//  can set that as the minimum_chrome_version in the manifest and then use async/await
+//  which will work in all the supported browser.
+//  @see https://developer.chrome.com/docs/extensions/reference/api/storage/StorageArea#method-StorageArea-get
+//
+const browser = globalThis.browser ?? chrome
+
 const defaultSettings = {
   hideMode: true,
   hideHomepageVideos: true,
@@ -12,10 +27,10 @@ const defaultSettings = {
   scheduleEnd: '17:00',
 }
 
-window.onload = function () {
+window.onload = async function () {
   localStorage.setItem('lastEvent', Date.now())
-  setAwake()
-  setVisibilities()
+  await setAwake()
+  await setVisibilities()
   document.body.addEventListener('mousemove', () => {
     activeEvent()
   })
@@ -24,7 +39,7 @@ window.onload = function () {
   })
 }
 
-chrome.storage.onChanged.addListener(changes => {
+browser.storage.onChanged.addListener(changes => {
   if (changes.enableSchedule || changes.scheduleStart || changes.scheduleEnd) {
     setAwake()
   } else {
@@ -58,41 +73,38 @@ function isAwake(scheduleStart, scheduleEnd, enableSchedule) {
   )
 }
 
-function setAwake() {
-  chrome.storage.sync.get(defaultSettings, function (result) {
-    if (
-      result.awake !==
-      isAwake(result.scheduleStart, result.scheduleEnd, result.enableSchedule)
-    ) {
-      chrome.storage.sync.set({
-        awake: isAwake(
-          result.scheduleStart,
-          result.scheduleEnd,
-          result.enableSchedule
-        ),
-      })
-    }
-  })
+async function setAwake() {
+  const result = await browser.storage.sync.get(defaultSettings)
+  const awake = isAwake(
+    result.scheduleStart,
+    result.scheduleEnd,
+    result.enableSchedule
+  )
+  if (result.awake !== awake) {
+    await browser.storage.sync.set({ awake })
+  }
 }
 
-function setVisibilities() {
-  chrome.storage.sync.get(defaultSettings, function (result) {
-    const hideOptions = [
-      'hideMode',
-      'hideHomepageVideos',
-      'hideHomepageSidebar',
-      'hidePlayerRelated',
-      'hidePlayerEndwall',
-      'hidePlayerComments',
-      'hideShorts',
-      'awake',
-    ]
+async function setVisibilities() {
+  // TODO: move this up to onLoad and change this function to
+  //  render(settings) and then wrap in tests
+  const result = await browser.storage.sync.get(defaultSettings)
 
-    hideOptions.forEach(key => {
-      result[key]
-        ? document.body.classList.add(key)
-        : document.body.classList.remove(key)
-    })
+  const hideOptions = [
+    'hideMode',
+    'hideHomepageVideos',
+    'hideHomepageSidebar',
+    'hidePlayerRelated',
+    'hidePlayerEndwall',
+    'hidePlayerComments',
+    'hideShorts',
+    'awake',
+  ]
+
+  hideOptions.forEach(key => {
+    result[key]
+      ? document.body.classList.add(key)
+      : document.body.classList.remove(key)
   })
 
   // Special case because hidden content was flashing on refresh (hide.css is hiding these initially)
