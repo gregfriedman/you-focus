@@ -11,7 +11,7 @@
 //  which will work in all the supported browser.
 //  @see https://developer.chrome.com/docs/extensions/reference/api/storage/StorageArea#method-StorageArea-get
 //
-const browser = globalThis.browser ?? chrome
+const browser = globalThis.browser ?? globalThis.chrome
 
 const defaultSettings = {
   hideMode: true,

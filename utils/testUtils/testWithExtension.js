@@ -6,7 +6,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 
 export const test = base.extend({
   context: async ({ viewport }, use) => {
-    const pathToExtension = join(__dirname, '../../src')
+    const pathToExtension = join(__dirname, '../../dist')
     const context = await chromium.launchPersistentContext('', {
       channel: 'chromium',
       // NOTE: as of right now, it appears that the manifest.content_scripts.css injection
