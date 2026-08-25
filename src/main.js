@@ -1,3 +1,5 @@
+import { applySettings } from './settings.js'
+
 // We want to have a single extension that can work in Chrome, Safari, and Firefox so
 //  we aim to leverage the standard WebExtensions API through a single `browser` object.
 //
@@ -90,24 +92,8 @@ async function setVisibilities() {
   //  render(settings) and then wrap in tests
   const result = await browser.storage.sync.get(defaultSettings)
 
-  const hideOptions = [
-    'hideMode',
-    'hideHomepageVideos',
-    'hideHomepageSidebar',
-    'hidePlayerRelated',
-    'hidePlayerEndwall',
-    'hidePlayerComments',
-    'hideShorts',
-    'awake',
-  ]
+  applySettings(result)
 
-  hideOptions.forEach(key => {
-    result[key]
-      ? document.body.classList.add(key)
-      : document.body.classList.remove(key)
-  })
-
-  // Special case because hidden content was flashing on refresh (hide.css is hiding these initially)
+  // Special case because hidden content was flashing on refresh (hide.css is hiding this initially)
   document.querySelector('body').style.visibility = 'visible'
-  document.querySelector('#guide-content').style.visibility = 'visible'
 }
