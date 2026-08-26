@@ -17,13 +17,18 @@ const defaultSettings = {
 }
 
 export async function hideDistractions() {
-  const settings = await browser.storage.sync.get(defaultSettings)
-  applySettings({
-    ...settings,
-    awake: isAwake(
-      settings.scheduleStart,
-      settings.scheduleEnd,
-      settings.enableSchedule
-    ),
-  })
+  try {
+    const settings = await browser.storage.sync.get(defaultSettings)
+    // TODO: pass map of setting name to css name
+    applySettings({
+      ...settings,
+      awake: isAwake(
+        settings.scheduleStart,
+        settings.scheduleEnd,
+        settings.enableSchedule
+      ),
+    })
+  } catch (e) {
+    console.error(e)
+  }
 }
