@@ -1,58 +1,75 @@
 import { describe, it, expect, beforeEach } from 'vitest'
 
-import { applySettings } from '../src/settings.js'
+import { syncClassesToSettings } from '../src/settings.js'
 
-describe('applySettings', () => {
+describe('syncClassesToSettings', () => {
   beforeEach(() => {
     document.body.className = ''
   })
 
   it('should update class list to match settings', () => {
     // Arrange
+    const map = {
+      enabled: 'test-enabled',
+      useDarkMode: 'test-dark',
+      bigFonts: 'test-font-lg',
+    }
+
     const settings = {
-      hideMode: true,
-      hideHomepageVideos: true,
-      hideHomepageSidebar: true,
-      hidePlayerRelated: true,
-      hidePlayerEndwall: true,
-      hidePlayerComments: false,
-      hideShorts: true,
-      awake: true,
+      enabled: true,
+      useDarkMode: false,
+      bigFonts: true,
     }
 
     // Act
-    applySettings(settings)
+    syncClassesToSettings(map, settings)
 
     // Assert
-    expect([...document.body.classList]).toEqual(
-      expect.arrayContaining([
-        'hideMode',
-        'hideHomepageVideos',
-        'hideHomepageSidebar',
-        'hidePlayerRelated',
-        'hidePlayerEndwall',
-        'hideShorts',
-        'awake',
-      ])
-    )
+    expect([...document.body.classList]).toEqual([
+      'test-enabled',
+      'test-font-lg',
+    ])
+  })
+
+  it('should ignore settings that are not in the map', () => {
+    // Arrange
+    const map = {
+      enabled: 'test-enabled',
+    }
+
+    const settings = {
+      enabled: true,
+      minutesSinceLastLogin: 300,
+    }
+
+    // Act
+    syncClassesToSettings(map, settings)
+
+    // Assert
+    expect([...document.body.classList]).toEqual(['test-enabled'])
   })
 
   it('should alter only the specified settings', () => {
-    applySettings({
-      hideMode: true,
-      hideHomepageVideos: true,
+    const map = {
+      enabled: 'test-enabled',
+      useDarkMode: 'test-dark',
+      bigFonts: 'test-font-lg',
+    }
+    syncClassesToSettings(map, {
+      enabled: true,
+      useDarkMode: true,
     })
 
     // Act
-    applySettings({
-      hideHomepageVideos: false,
-      hideHomepageSidebar: true,
+    syncClassesToSettings(map, {
+      useDarkMode: false,
+      bigFonts: true,
     })
 
     // Assert
-    expect(document.body.classList.values().toArray()).toEqual([
-      'hideMode',
-      'hideHomepageSidebar',
+    expect([...document.body.classList]).toEqual([
+      'test-enabled',
+      'test-font-lg',
     ])
   })
 })

@@ -1,4 +1,4 @@
-import { applySettings } from './settings.js'
+import { syncClassesToSettings } from './settings.js'
 import { isAwake } from './schedule.js'
 import { browser } from './browser.js'
 
@@ -20,7 +20,7 @@ export async function hideDistractions() {
   try {
     const settings = await browser.storage.sync.get(defaultSettings)
     // TODO: pass map of setting name to css name
-    applySettings({
+    syncClassesToSettings({
       ...settings,
       awake: isAwake(
         settings.scheduleStart,
