@@ -16,7 +16,7 @@ export function classChanges(classMap, settings) {
     R.pick(R.keys(classMap)), // { a: true, b: false, c: true }
     R.partition(Boolean), // [ {a: true, c: true}, { b: false} ]
     R.zipObj(['include', 'exclude']), // { include: { a: true, c: true }, exclude: { b: false } }
-    R.map(R.keys), // { include: [ 'a', 'c' ], exclude: ['b' }
+    R.map(R.keys), // { include: [ 'a', 'c' ], exclude: ['b' ] }
     R.map(lookup(classMap)) // { include: ['class-a', 'class-c'], exclude: ['class-b'] }
   )(settings)
 }

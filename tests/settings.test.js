@@ -45,7 +45,7 @@ describe('classChanges', () => {
     expect(changes).toEqual({ include: ['test-enabled'], exclude: [] })
   })
 
-  it('should alter only the specified settings', () => {
+  it('should return only the specified settings', () => {
     const classMap = {
       enabled: 'test-enabled',
       useDarkMode: 'test-dark',
@@ -79,7 +79,7 @@ describe('classChanges', () => {
   })
 })
 
-describe('syncChanges', () => {
+describe('syncClassChanges', () => {
   beforeEach(() => {
     document.body.className = ''
   })
@@ -90,5 +90,14 @@ describe('syncChanges', () => {
     syncClassChanges({ include: ['test-a', 'test-b'], exclude: ['test-c'] })
 
     expect(document.body.className).toEqual('test-a test-b')
+  })
+
+  it('should work with invalid values', () => {
+    // Act
+    syncClassChanges(null)
+    expect(document.body.className).toEqual('')
+
+    syncClassChanges({ include: null, exclude: null })
+    expect(document.body.className).toEqual('')
   })
 })
