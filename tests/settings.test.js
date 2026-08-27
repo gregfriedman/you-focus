@@ -9,7 +9,7 @@ describe('syncClassesToSettings', () => {
 
   it('should update class list to match settings', () => {
     // Arrange
-    const map = {
+    const classMap = {
       enabled: 'test-enabled',
       useDarkMode: 'test-dark',
       bigFonts: 'test-font-lg',
@@ -22,7 +22,7 @@ describe('syncClassesToSettings', () => {
     }
 
     // Act
-    syncClassesToSettings(map, settings)
+    syncClassesToSettings(classMap, settings)
 
     // Assert
     expect([...document.body.classList]).toEqual([
@@ -33,7 +33,7 @@ describe('syncClassesToSettings', () => {
 
   it('should ignore settings that are not in the map', () => {
     // Arrange
-    const map = {
+    const classMap = {
       enabled: 'test-enabled',
     }
 
@@ -43,25 +43,25 @@ describe('syncClassesToSettings', () => {
     }
 
     // Act
-    syncClassesToSettings(map, settings)
+    syncClassesToSettings(classMap, settings)
 
     // Assert
     expect([...document.body.classList]).toEqual(['test-enabled'])
   })
 
   it('should alter only the specified settings', () => {
-    const map = {
+    const classMap = {
       enabled: 'test-enabled',
       useDarkMode: 'test-dark',
       bigFonts: 'test-font-lg',
     }
-    syncClassesToSettings(map, {
+    syncClassesToSettings(classMap, {
       enabled: true,
       useDarkMode: true,
     })
 
     // Act
-    syncClassesToSettings(map, {
+    syncClassesToSettings(classMap, {
       useDarkMode: false,
       bigFonts: true,
     })
@@ -71,5 +71,15 @@ describe('syncClassesToSettings', () => {
       'test-enabled',
       'test-font-lg',
     ])
+  })
+
+  it('should work with invalid values', () => {
+    // Act
+    syncClassesToSettings(null, null)
+    syncClassesToSettings(null, { a: 'test-a' })
+    syncClassesToSettings(undefined, undefined)
+
+    // Assert
+    expect(document.body.className).toEqual('')
   })
 })
