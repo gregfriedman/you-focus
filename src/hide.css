@@ -1,8 +1,3 @@
-/* Hiding elements on page load so no flash */
-body {
-  visibility: hidden;
-}
-
 body.hideMode.awake.hideHomepageVideos ytd-two-column-browse-results-renderer[page-subtype="home"] /* hide homepage video feed */,
 body.hideMode.awake.hideHomepageSidebar ytd-mini-guide-renderer[role="navigation"], /* minimized sidebar */
 body.hideMode.awake.hideHomepageSidebar tp-yt-app-drawer[role="navigation"], /* maximized sidebar */

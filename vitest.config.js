@@ -6,6 +6,7 @@ export default defineConfig({
       {
         test: {
           name: 'unit',
+          environment: 'jsdom',
           include: ['**/*.test.js'],
         },
       },

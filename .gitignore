@@ -15,3 +15,5 @@ node_modules/
 !/tests/fixtures/shorts/README.md
 /playwright-report/
 /test-results/
+
+dist/

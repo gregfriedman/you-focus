@@ -1,113 +1,30 @@
-// We want to have a single extension that can work in Chrome, Safari, and Firefox so
-//  we aim to leverage the standard WebExtensions API through a single `browser` object.
-//
-// From Chrome 148, all Chrome Extension APIs are available under the `browser` namespace
-//  in addition to the existing `chrome` namespace. But just in case there are existing
-//  users on earlier versions, we always alias browser to chrome if the global browser is not defined
-//  @see https://developer.chrome.com/docs/extensions/develop/concepts/browser-namespace
-//
-// Since Chrome 95+ supports returning Promises from `storage.get` and `storage.set`, we
-//  can set that as the minimum_chrome_version in the manifest and then use async/await
-//  which will work in all the supported browser.
-//  @see https://developer.chrome.com/docs/extensions/reference/api/storage/StorageArea#method-StorageArea-get
-//
-const browser = globalThis.browser ?? chrome
+/**
+ * @module main
+ * content script injected into web page which triggers hiding distractions
+ *  when the page is loaded or when the user modifies the YouFocus settings
+ */
+import { hideDistractions } from './youFocus.js'
+import { browser } from './browser.js'
+import { throttle } from './throttle.js'
 
-const defaultSettings = {
-  hideMode: true,
-  hideHomepageVideos: true,
-  hideHomepageSidebar: true,
-  hidePlayerRelated: true,
-  hidePlayerEndwall: true,
-  hidePlayerComments: false,
-  hideShorts: true,
-  awake: true,
-  enableSchedule: false,
-  scheduleStart: '09:00',
-  scheduleEnd: '17:00',
+function initialize() {
+  void hideDistractions()
+
+  browser.storage.onChanged.addListener(hideDistractions)
+
+  /** @type func - called when there is user interaction **/
+  const onActivity = throttle(hideDistractions, 5000)
+
+  document.body.addEventListener('mousemove', onActivity)
+  document.body.addEventListener('click', onActivity)
 }
 
-window.onload = async function () {
-  localStorage.setItem('lastEvent', Date.now())
-  await setAwake()
-  await setVisibilities()
-  document.body.addEventListener('mousemove', () => {
-    activeEvent()
-  })
-  document.body.addEventListener('click', () => {
-    activeEvent()
-  })
-}
-
-browser.storage.onChanged.addListener(changes => {
-  if (changes.enableSchedule || changes.scheduleStart || changes.scheduleEnd) {
-    setAwake()
-  } else {
-    setVisibilities()
-  }
-})
-
-function activeEvent() {
-  if (Date.now() - localStorage.getItem('lastEvent') > 5000) {
-    console.log('active event')
-    localStorage.setItem('lastEvent', Date.now())
-    setAwake()
-  }
-}
-
-function inRange(start, end) {
-  const startHour = Number(start.split(':')[0])
-  const startMin = Number(start.split(':')[1])
-  const endHour = Number(end.split(':')[0])
-  const endMin = Number(end.split(':')[1])
-  const startDate = new Date()
-  const endDate = new Date()
-  startDate.setHours(startHour, startMin, 0)
-  endDate.setHours(endHour, endMin, 59)
-  return startDate <= Date.now() && endDate >= Date.now()
-}
-
-function isAwake(scheduleStart, scheduleEnd, enableSchedule) {
-  return (
-    (enableSchedule && inRange(scheduleStart, scheduleEnd)) || !enableSchedule
-  )
-}
-
-async function setAwake() {
-  const result = await browser.storage.sync.get(defaultSettings)
-  const awake = isAwake(
-    result.scheduleStart,
-    result.scheduleEnd,
-    result.enableSchedule
-  )
-  if (result.awake !== awake) {
-    await browser.storage.sync.set({ awake })
-  }
-}
-
-async function setVisibilities() {
-  // TODO: move this up to onLoad and change this function to
-  //  render(settings) and then wrap in tests
-  const result = await browser.storage.sync.get(defaultSettings)
-
-  const hideOptions = [
-    'hideMode',
-    'hideHomepageVideos',
-    'hideHomepageSidebar',
-    'hidePlayerRelated',
-    'hidePlayerEndwall',
-    'hidePlayerComments',
-    'hideShorts',
-    'awake',
-  ]
-
-  hideOptions.forEach(key => {
-    result[key]
-      ? document.body.classList.add(key)
-      : document.body.classList.remove(key)
-  })
-
-  // Special case because hidden content was flashing on refresh (hide.css is hiding these initially)
-  document.querySelector('body').style.visibility = 'visible'
-  document.querySelector('#guide-content').style.visibility = 'visible'
-}
+// We want to hide distractions as soon as possible so we hide
+//  after `DOMContentLoaded` event instead of waiting for all the images to
+//  download via the `load` event. (Try switching to window.onload and then
+//  load the homepage with the browser throttled to 3G, and you'll see video
+//  thumbnails gradually appear before hiding)
+// NOTE: we can count on this event firing because manifest.json sets run_at
+//  to document_start, but if that value is changed then initialization might
+//  get skipped
+document.addEventListener('DOMContentLoaded', initialize)

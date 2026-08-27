@@ -18,16 +18,18 @@
     "test": "tests"
   },
   "scripts": {
+    "build": "rsync -a --exclude=\"*.js\" --delete src/ dist/ && esbuild src/main.js src/popup.js --bundle --outdir=dist --outbase=src",
     "fixture": "node utils/fixtureUtils/prepareFixture.js",
-    "pw:open": "playwright test --ui",
-    "pw:run": "playwright test",
-    "pw:update": "playwright test --update-snapshots",
+    "pw:open": "npm run build && playwright test --ui",
+    "pw:run": "npm run build && playwright test",
+    "pw:update": "npm run build && playwright test --update-snapshots",
     "setup": "npm ci --ignore-scripts && playwright install --with-deps chromium",
     "test": "vitest --project unit",
     "test:integration": "vitest --project integration"
   },
   "devDependencies": {
     "@playwright/test": "^1.61.1",
+    "esbuild": "0.28.2",
     "jsdom": "^29.1.1",
     "lodash": "^4.18.1",
     "prettier": "^3.9.6",
