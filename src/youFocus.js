@@ -1,4 +1,4 @@
-import { classChanges, syncClassChanges } from './settings.js'
+import { classChanges, syncClassChanges } from './classChanges.js'
 import { isAwake } from './schedule.js'
 import { browser } from './browser.js'
 

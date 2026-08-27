@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest'
 
-import { classChanges, syncClassChanges } from '../src/settings.js'
+import { classChanges, syncClassChanges } from '../src/classChanges.js'
 
 describe('classChanges', () => {
   it('should return class list based on truthy settings', () => {
