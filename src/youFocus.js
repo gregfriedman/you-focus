@@ -16,18 +16,28 @@ const defaultSettings = {
   scheduleEnd: '17:00',
 }
 
+// map setting name to CSS class that should be added to body
+//  when that setting is enabled
+const classMap = {
+  hideMode: 'hideMode',
+  hideHomepageVideos: 'hideHomepageVideos',
+  hideHomepageSidebar: 'hideHomepageSidebar',
+  hidePlayerRelated: 'hidePlayerRelated',
+  hidePlayerEndwall: 'hidePlayerEndwall',
+  hidePlayerComments: 'hidePlayerComments',
+  hideShorts: 'hideShorts',
+  awake: 'awake',
+}
+
 export async function hideDistractions() {
   try {
     const settings = await browser.storage.sync.get(defaultSettings)
-    // TODO: pass map of setting name to css name
-    syncClassesToSettings({
-      ...settings,
-      awake: isAwake(
-        settings.scheduleStart,
-        settings.scheduleEnd,
-        settings.enableSchedule
-      ),
-    })
+    const awake = isAwake(
+      settings.scheduleStart,
+      settings.scheduleEnd,
+      settings.enableSchedule
+    )
+    syncClassesToSettings(classMap, { ...settings, awake })
   } catch (e) {
     console.error(e)
   }
