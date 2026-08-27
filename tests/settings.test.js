@@ -1,13 +1,9 @@
 import { describe, it, expect, beforeEach } from 'vitest'
 
-import { syncClassesToSettings } from '../src/settings.js'
+import { classChanges, syncClassChanges } from '../src/settings.js'
 
-describe('syncClassesToSettings', () => {
-  beforeEach(() => {
-    document.body.className = ''
-  })
-
-  it('should update class list to match settings', () => {
+describe('classChanges', () => {
+  it('should return class list based on truthy settings', () => {
     // Arrange
     const classMap = {
       enabled: 'test-enabled',
@@ -22,13 +18,13 @@ describe('syncClassesToSettings', () => {
     }
 
     // Act
-    syncClassesToSettings(classMap, settings)
+    const changes = classChanges(classMap, settings)
 
     // Assert
-    expect([...document.body.classList]).toEqual([
-      'test-enabled',
-      'test-font-lg',
-    ])
+    expect(changes).toEqual({
+      include: ['test-enabled', 'test-font-lg'],
+      exclude: ['test-dark'],
+    })
   })
 
   it('should ignore settings that are not in the map', () => {
@@ -43,10 +39,10 @@ describe('syncClassesToSettings', () => {
     }
 
     // Act
-    syncClassesToSettings(classMap, settings)
+    const changes = classChanges(classMap, settings)
 
     // Assert
-    expect([...document.body.classList]).toEqual(['test-enabled'])
+    expect(changes).toEqual({ include: ['test-enabled'], exclude: [] })
   })
 
   it('should alter only the specified settings', () => {
@@ -55,31 +51,44 @@ describe('syncClassesToSettings', () => {
       useDarkMode: 'test-dark',
       bigFonts: 'test-font-lg',
     }
-    syncClassesToSettings(classMap, {
+
+    const changes = classChanges(classMap, {
       enabled: true,
       useDarkMode: true,
     })
 
-    // Act
-    syncClassesToSettings(classMap, {
-      useDarkMode: false,
-      bigFonts: true,
-    })
-
     // Assert
-    expect([...document.body.classList]).toEqual([
-      'test-enabled',
-      'test-font-lg',
-    ])
+    expect(changes).toEqual({
+      include: ['test-enabled', 'test-dark'],
+      exclude: [],
+    })
   })
 
   it('should work with invalid values', () => {
-    // Act
-    syncClassesToSettings(null, null)
-    syncClassesToSettings(null, { a: 'test-a' })
-    syncClassesToSettings(undefined, undefined)
+    // Arrange
+    const noChanges = {
+      include: [],
+      exclude: [],
+    }
 
+    // Act
     // Assert
-    expect(document.body.className).toEqual('')
+    expect(classChanges(null, null)).toEqual(noChanges)
+    expect(classChanges(null, { a: 'test-a' })).toEqual(noChanges)
+    expect(classChanges(undefined, undefined)).toEqual(noChanges)
+  })
+})
+
+describe('syncChanges', () => {
+  beforeEach(() => {
+    document.body.className = ''
+  })
+  it('should add classes for include and remove classes for exclude', () => {
+    // Arrange
+    document.body.className = 'test-c'
+
+    syncClassChanges({ include: ['test-a', 'test-b'], exclude: ['test-c'] })
+
+    expect(document.body.className).toEqual('test-a test-b')
   })
 })
