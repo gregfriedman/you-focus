@@ -1,4 +1,4 @@
-import { syncClassesToSettings } from './settings.js'
+import { classChanges, syncClassChanges } from './settings.js'
 import { isAwake } from './schedule.js'
 import { browser } from './browser.js'
 
@@ -37,7 +37,8 @@ export async function hideDistractions() {
       settings.scheduleEnd,
       settings.enableSchedule
     )
-    syncClassesToSettings(classMap, { ...settings, awake })
+    const changes = classChanges(classMap, { ...settings, awake })
+    syncClassChanges(changes)
   } catch (e) {
     console.error(e)
   }

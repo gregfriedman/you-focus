@@ -1,7 +1,16 @@
 import * as R from 'ramda'
 
+/** Return the values for all the specified keys in the specified object */
+const lookup = obj => keys => R.props(keys, obj)
+
+/**
+ * Return the list of classes that should be included and those that should be excluded
+ *  based on the current settings. Truthy settings are included.
+ * @param {Object} classMap - association of setting name (key) to class name (value)
+ * @param {Object} settings - key/value pairs of setting name to setting value
+ * @return { {include: string[], exclude: string[] } }
+ */
 export function classChanges(classMap, settings) {
-  const lookup = obj => keys => R.props(keys, obj)
   return R.pipe(
     // { a: true, b: false, c: true, d: 17 }
     R.pick(R.keys(classMap)), // { a: true, b: false, c: true }
@@ -13,12 +22,8 @@ export function classChanges(classMap, settings) {
 }
 
 /**
- * Update the classes on the body to add the classes in the classMap for which the
- *  corresponding setting is truthy and remove the classes where the setting is falsy.
- *  Partial settings can be passed to only alter the classes for the specified settings
- *  leaving existing classes in place for previous applied settings.
- * @param {Object} classMap - association of setting name (key) to class name (value)
- * @param {Object} settings - key/value pairs of setting name to setting value
+ * Update the classes on the body to add the included classes and remove the excluded classes
+ * @param { {include: string[], exclude: string[]} } changes
  */
 export function syncClassChanges(changes) {
   changes?.include?.forEach(className => document.body.classList.add(className))
