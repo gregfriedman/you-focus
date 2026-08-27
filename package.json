@@ -46,5 +46,8 @@
     "tests": [
       "**/*.test.js"
     ]
+  },
+  "dependencies": {
+    "ramda": "^0.32.0"
   }
 }
