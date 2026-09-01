@@ -72,3 +72,6 @@ Note that npm run test:ui (i.e. playwright test --ui) doesn't seem to reflect th
 Run `npm run pw:run` and it will run the test and launch the report if there is a failure. Use the diff tool on the report to compare the screenshots or look in the .test-results folder. If the new screenshot is correct you can run `npm run pw:update` to update all snapshots or  `npx playwright test tests/hide.spec.js --update-snapshots` to focus only on certain test file
 
 If the test fails you can use `npx playwright show-report` to see the last run and find the `View trace` link to see actual network calls and errors
+
+You can run a single test using its name via `npm run pw:run -- -g "only the masthead with the search bar is visible"`
+You can also run a single test by modifying the test code to use `test.only(` instead of `test(`
