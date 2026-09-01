@@ -2,7 +2,7 @@ import { classChanges, syncClassChanges } from './classChanges.js'
 import { isAwake } from './schedule.js'
 import { browser } from './browser.js'
 
-const defaultSettings = {
+export const defaultSettings = {
   hideMode: true,
   hideHomepageVideos: true,
   hideHomepageSidebar: true,

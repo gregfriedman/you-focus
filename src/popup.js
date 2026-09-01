@@ -1,18 +1,5 @@
 import { browser } from './browser.js'
-
-const defaultSettings = {
-  hideMode: true,
-  hideHomepageVideos: true,
-  hideHomepageSidebar: true,
-  hidePlayerRelated: true,
-  hidePlayerEndwall: true,
-  hidePlayerComments: false,
-  hideShorts: true,
-  awake: true,
-  enableSchedule: false,
-  scheduleStart: '09:00',
-  scheduleEnd: '17:00',
-}
+import { defaultSettings } from './youFocus.js'
 
 function setPopupState(hideMode) {
   document.querySelector('main').style.opacity = hideMode ? '1.0' : '0.4'
@@ -39,8 +26,8 @@ async function handleClick() {
 }
 
 function handleInputChange(input) {
-  startInput = document.getElementById('scheduleStart')
-  endInput = document.getElementById('scheduleEnd')
+  const startInput = document.getElementById('scheduleStart')
+  const endInput = document.getElementById('scheduleEnd')
   if (input.target.id === 'scheduleStart') {
     endInput.value =
       input.target.value >= endInput.value ? input.target.value : endInput.value
@@ -77,9 +64,11 @@ window.onload = async function () {
 }
 
 function saveScheduleInputs() {
-  startInput = document.getElementById('scheduleStart')
-  endInput = document.getElementById('scheduleEnd')
-  chrome.storage.sync.set({
+  const startInput = document.getElementById('scheduleStart')
+  const endInput = document.getElementById('scheduleEnd')
+  // intentionally not awaiting so that button hides immediately but failure
+  //  will get lost
+  browser.storage.sync.set({
     scheduleStart: startInput.value,
     scheduleEnd: endInput.value,
   })
