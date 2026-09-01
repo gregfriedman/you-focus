@@ -1,3 +1,5 @@
+import { browser } from './browser.js'
+
 const defaultSettings = {
   hideMode: true,
   hideHomepageVideos: true,
@@ -19,20 +21,21 @@ function setPopupState(hideMode) {
     : 'none'
 }
 
-function handleClick() {
+async function handleClick() {
   const id = this.id
   let button = this
-  chrome.storage.sync.get(defaultSettings, function (result) {
-    const newValue = !result[id]
-    chrome.storage.sync.set({ [id]: newValue })
-    button.className = newValue ? 'toggle toggle-on' : 'toggle toggle-off'
-    if (id === 'hideMode') setPopupState(newValue)
-    if (id === 'enableSchedule') {
-      document.getElementById('scheduleInputs').style.display = newValue
-        ? 'block'
-        : 'none'
-    }
-  })
+  const result = await browser.storage.sync.get(defaultSettings)
+  const newValue = !result[id]
+  // TODO: what's the right thing to do here? We want the toggle to respond immediately for
+  //  best UX but it's possible the storage set could fail.
+  browser.storage.sync.set({ [id]: newValue })
+  button.className = newValue ? 'toggle toggle-on' : 'toggle toggle-off'
+  if (id === 'hideMode') setPopupState(newValue)
+  if (id === 'enableSchedule') {
+    document.getElementById('scheduleInputs').style.display = newValue
+      ? 'block'
+      : 'none'
+  }
 }
 
 function handleInputChange(input) {
@@ -51,27 +54,26 @@ function handleInputChange(input) {
   document.getElementById('setSchedule').style.display = 'block'
 }
 
-window.onload = function () {
-  chrome.storage.sync.get(defaultSettings, function (result) {
-    document.getElementById('scheduleInputs').style.display =
-      result.enableSchedule ? 'block' : 'none'
-    document.querySelectorAll('.toggle').forEach(function (element) {
-      if (element.id === 'hideShorts') {
-        console.log(result[element.id])
-      }
-      element.className = result[element.id]
-        ? 'toggle toggle-on'
-        : 'toggle toggle-off'
-      element.onclick = handleClick
-    })
-    document.querySelectorAll('.schedule-input').forEach(function (input) {
-      input.value = result[input.id]
-      input.addEventListener('change', handleInputChange)
-    })
-    document.getElementById('setSchedule').onclick = saveScheduleInputs
-
-    setPopupState(result.hideMode)
+window.onload = async function () {
+  const result = await browser.storage.sync.get(defaultSettings)
+  document.getElementById('scheduleInputs').style.display =
+    result.enableSchedule ? 'block' : 'none'
+  document.querySelectorAll('.toggle').forEach(function (element) {
+    if (element.id === 'hideShorts') {
+      console.log(result[element.id])
+    }
+    element.className = result[element.id]
+      ? 'toggle toggle-on'
+      : 'toggle toggle-off'
+    element.onclick = handleClick
   })
+  document.querySelectorAll('.schedule-input').forEach(function (input) {
+    input.value = result[input.id]
+    input.addEventListener('change', handleInputChange)
+  })
+  document.getElementById('setSchedule').onclick = saveScheduleInputs
+
+  setPopupState(result.hideMode)
 }
 
 function saveScheduleInputs() {
