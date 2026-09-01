@@ -23,11 +23,9 @@ export function classChanges(classMap, settings) {
 
 /**
  * Update the classes on the body to add the included classes and remove the excluded classes
- * @param { {include: string[], exclude: string[]} } changes
+ * @param { {include: string[], exclude: string[]} } [changes]
  */
 export function syncClassChanges(changes) {
-  changes?.include?.forEach(className => document.body.classList.add(className))
-  changes?.exclude?.forEach(className =>
-    document.body.classList.remove(className)
-  )
+  document.body.classList.add(...(changes?.include || []))
+  document.body.classList.remove(...(changes?.exclude || []))
 }

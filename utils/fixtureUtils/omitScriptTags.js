@@ -1,5 +1,4 @@
-import _ from 'lodash/fp.js'
-import { JSDOM } from 'jsdom';
+import { JSDOM } from 'jsdom'
 
 /**
  * Return the specified html but without any of the script tags.
@@ -9,7 +8,7 @@ import { JSDOM } from 'jsdom';
  * @return {string} html without the script tags
  */
 export const omitScriptTags = html => {
-  if (_.isEmpty(html)) return html
+  if (!html) return html
   const dom = new JSDOM(html)
   const scripts = dom.window.document.querySelectorAll('script')
   scripts.forEach(el => el.remove())

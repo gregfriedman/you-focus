@@ -2,7 +2,6 @@ import { beforeEach, describe, expect, it } from 'vitest'
 import fs from 'node:fs'
 import path from 'node:path'
 import url from 'node:url'
-import _ from 'lodash/fp'
 
 import { prepareFixture } from '../prepareFixture.js'
 import { safeRemoveSubdir } from '../../safeRemoveSubdir.js'
@@ -35,6 +34,6 @@ describe('prepareFixture', () => {
       path.join(fixtureTempDir, 'webpage_files')
     )
     expect(files).toEqual(expect.arrayContaining(['styles.css']))
-    expect(_.filter(_.endsWith('.js'), files)).toEqual([])
+    expect(files.filter(f => f.endsWith('.js'))).toEqual([])
   })
 })
