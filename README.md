@@ -74,3 +74,4 @@ Run `npm run pw:run` and it will run the test and launch the report if there is 
 If the test fails you can use `npx playwright show-report` to see the last run and find the `View trace` link to see actual network calls and errors
 
 You can run a single test using its name via `npm run pw:run -- -g "only the masthead with the search bar is visible"`
+You can also run a single test by modifying the test code to use `test.only(` instead of `test(`
