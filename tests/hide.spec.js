@@ -22,6 +22,18 @@ const complianceMasks = page => [
   page.getByText(/google/i),
 ]
 
+/**
+ * Return a string representing the time as HH:mm which is offset
+ *  from the current time by the specified number of hours
+ * @param {number} numHours - positive hours for future time, negative for past
+ * @return {string}
+ * @example If current time is 13:20
+ *  hoursFromNow(1) => '14:20'
+ *  hoursFromNow(-1) => '12:20'
+ */
+const hoursFromNow = numHours =>
+  new Date(Date.now() + numHours * 3_600_000).toTimeString().slice(0, 5)
+
 describe('homepage', () => {
   test.use({ viewport: { width: 1600, height: 1200 } })
   const fixture = join(fixturesDir, 'home/index.html')
@@ -70,11 +82,10 @@ describe('homepage', () => {
     await page.locator('#enableSchedule.toggle-off').click()
     await expect(await page.locator('#enableSchedule')).toHaveClass(/toggle-on/)
 
-    // If current time is 13:20, hoursFromNow(1) => '14:20'
-    const hoursFromNow = numHours =>
-      new Date(Date.now() + numHours * 3_600_000).toTimeString().slice(0, 5)
-
     // set the schedule to a time after the current time
+    // NOTE: We can't use page.clock because the main.js content script runs in its own
+    //  isolated environment which won't be altered by global mock time injected into the page
+    //  @see https://developer.chrome.com/docs/extensions/develop/concepts/content-scripts#isolated_world
     await page.locator('#scheduleStart').fill(hoursFromNow(1))
     await page.locator('#scheduleEnd').fill(hoursFromNow(2))
     await page.locator('#setSchedule').click()
