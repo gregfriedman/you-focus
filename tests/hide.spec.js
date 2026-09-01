@@ -60,7 +60,7 @@ describe('homepage', () => {
     })
   })
 
-  test.only('change schedule to overlap with current time hides homepage distractions', async ({
+  test('change schedule to overlap with current time hides homepage distractions', async ({
     page,
     extensionId,
   }) => {

@@ -33,6 +33,7 @@ export const test = base.extend({
     await page.goto(`chrome://extensions-internals`)
     const internals = JSON.parse(await page.locator('body').innerText())
     const extensionId = internals.find(e => e.name === 'YouFocus')?.id
+    await page.close()
     await use(extensionId)
   },
 })
