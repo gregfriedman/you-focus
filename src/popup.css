@@ -95,11 +95,6 @@ footer {
   display: none
 }
 
-#rate[href] {
-  display: revert;
-}
-
-
 a:visited {
   color: blue;
 }
