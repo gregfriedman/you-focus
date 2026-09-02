@@ -12,7 +12,7 @@ function initialize() {
 
   browser.storage.onChanged.addListener(hideDistractions)
 
-  /** @type func - called when there is user interaction **/
+  /** @type function - called when there is user interaction **/
   const onActivity = throttle(hideDistractions, 5000)
 
   document.body.addEventListener('mousemove', onActivity)
