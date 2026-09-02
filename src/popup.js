@@ -1,5 +1,7 @@
 import { browser } from './browser.js'
 import { defaultSettings } from './youFocus.js'
+import { extensionType } from './extensionType.js'
+import reviewUrls from './reviewUrls.json'
 
 function setPopupState(hideMode) {
   document.querySelector('main').style.opacity = hideMode ? '1.0' : '0.4'
@@ -41,6 +43,15 @@ function handleInputChange(input) {
   document.getElementById('setSchedule').style.display = 'block'
 }
 
+function renderRatingLink() {
+  const reviewUrl = reviewUrls[extensionType()]
+
+  if (reviewUrl) {
+    const ratingLink = document.getElementById('rate')
+    ratingLink.href = reviewUrl
+  }
+}
+
 window.onload = async function () {
   const result = await browser.storage.sync.get(defaultSettings)
   document.getElementById('scheduleInputs').style.display =
@@ -61,6 +72,7 @@ window.onload = async function () {
   document.getElementById('setSchedule').onclick = saveScheduleInputs
 
   setPopupState(result.hideMode)
+  renderRatingLink()
 }
 
 function saveScheduleInputs() {
