@@ -91,6 +91,12 @@ footer {
   float: right;
 }
 
+#rate:not([href]) {
+  display: none
+}
+
 a:visited {
   color: blue;
 }
+
+
