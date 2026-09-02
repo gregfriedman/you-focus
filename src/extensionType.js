@@ -1,8 +1,8 @@
 import { browser } from './browser.js'
 
 export function extensionTypeFromUrl(url) {
-  const [, browser] = /(.*)-extension:\/\//.exec(url) || []
-  return browser
+  const [, extensionType] = /^(.*?)-.*extension:\/\//.exec(url) || []
+  return extensionType
 }
 
 /**

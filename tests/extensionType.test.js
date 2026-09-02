@@ -6,7 +6,8 @@ describe('extensionTypeFromUrl', () => {
   // These are the ones we know about already
   it.each([
     ['chrome', 'chrome-extension://some-id/some-asset'],
-    ['safari', 'safari-extension://some-id/some-asset'],
+    // Safari v26.5, getURL('/') returned "safari-web-extension://B8B622EF-F207-4C27-A0B3-052F2D3871DC/"
+    ['safari', 'safari-web-extension://some-id/some-asset'],
     ['moz', 'moz-extension://some-id/some-asset'],
   ])('should parse %s url', (browser, url) => {
     expect(extensionTypeFromUrl(url)).toBe(browser)

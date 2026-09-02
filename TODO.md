@@ -1,0 +1,3 @@
+- Test on iOS
+- Report issue => Tally form with extension version, browser version, OS (single source, user doesn't have to reveal email, free)
+- Request feature => Tally form
