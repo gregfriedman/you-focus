@@ -1,6 +1,7 @@
-- Test on iOS
-- Add mobile specific classes to hide.css
-- e2e test mobile
+- mobile: Test on iOS
+- mobile: Ensure tab You > "You're not signed in" is displayed 
+- mobile: Add mobile specific classes to hide.css
+- mobile: e2e test mobile
 
 - Report issue => Tally form with extension version, browser version, OS (single source, user doesn't have to reveal email, free)
 - Request feature => Tally form

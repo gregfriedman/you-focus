@@ -1,0 +1,1019 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6369E23F304A431300CA0749 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6369E23E304A431300CA0749 /* AppDelegate.swift */; };
+		6369E241304A431300CA0749 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6369E240304A431300CA0749 /* SceneDelegate.swift */; };
+		6369E244304A431300CA0749 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6369E242304A431300CA0749 /* LaunchScreen.storyboard */; };
+		6369E247304A431300CA0749 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6369E245304A431300CA0749 /* Main.storyboard */; };
+		6369E250304A431300CA0749 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6369E24F304A431300CA0749 /* AppDelegate.swift */; };
+		6369E253304A431300CA0749 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6369E251304A431300CA0749 /* Main.storyboard */; };
+		6369E25A304A431300CA0749 /* YouFocus Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 6369E259304A431300CA0749 /* YouFocus Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6369E264304A431300CA0749 /* YouFocus Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 6369E263304A431300CA0749 /* YouFocus Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6369E269304A431300CA0749 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 6369E22E304A431200CA0749 /* Main.html */; };
+		6369E26A304A431300CA0749 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 6369E22E304A431200CA0749 /* Main.html */; };
+		6369E26B304A431300CA0749 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6369E230304A431200CA0749 /* Icon.png */; };
+		6369E26C304A431300CA0749 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6369E230304A431200CA0749 /* Icon.png */; };
+		6369E26D304A431300CA0749 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 6369E231304A431200CA0749 /* Style.css */; };
+		6369E26E304A431300CA0749 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 6369E231304A431200CA0749 /* Style.css */; };
+		6369E26F304A431300CA0749 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 6369E232304A431200CA0749 /* Script.js */; };
+		6369E270304A431300CA0749 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 6369E232304A431200CA0749 /* Script.js */; };
+		6369E271304A431300CA0749 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6369E233304A431200CA0749 /* ViewController.swift */; };
+		6369E272304A431300CA0749 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6369E233304A431200CA0749 /* ViewController.swift */; };
+		6369E273304A431300CA0749 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6369E234304A431300CA0749 /* Assets.xcassets */; };
+		6369E274304A431300CA0749 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6369E234304A431300CA0749 /* Assets.xcassets */; };
+		6369E275304A431300CA0749 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6369E236304A431300CA0749 /* SafariWebExtensionHandler.swift */; };
+		6369E276304A431300CA0749 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6369E236304A431300CA0749 /* SafariWebExtensionHandler.swift */; };
+		6369E291304A431300CA0749 /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = 6369E288304A431300CA0749 /* popup.js */; };
+		6369E292304A431300CA0749 /* images in Resources */ = {isa = PBXBuildFile; fileRef = 6369E289304A431300CA0749 /* images */; };
+		6369E293304A431300CA0749 /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = 6369E28A304A431300CA0749 /* popup.html */; };
+		6369E294304A431300CA0749 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 6369E28B304A431300CA0749 /* main.js */; };
+		6369E295304A431300CA0749 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 6369E28C304A431300CA0749 /* manifest.json */; };
+		6369E296304A431300CA0749 /* hide.css in Resources */ = {isa = PBXBuildFile; fileRef = 6369E28D304A431300CA0749 /* hide.css */; };
+		6369E297304A431300CA0749 /* toggle.css in Resources */ = {isa = PBXBuildFile; fileRef = 6369E28E304A431300CA0749 /* toggle.css */; };
+		6369E298304A431300CA0749 /* popup.css in Resources */ = {isa = PBXBuildFile; fileRef = 6369E28F304A431300CA0749 /* popup.css */; };
+		6369E299304A431300CA0749 /* reviewUrls.json in Resources */ = {isa = PBXBuildFile; fileRef = 6369E290304A431300CA0749 /* reviewUrls.json */; };
+		6369E29A304A431300CA0749 /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = 6369E288304A431300CA0749 /* popup.js */; };
+		6369E29B304A431300CA0749 /* images in Resources */ = {isa = PBXBuildFile; fileRef = 6369E289304A431300CA0749 /* images */; };
+		6369E29C304A431300CA0749 /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = 6369E28A304A431300CA0749 /* popup.html */; };
+		6369E29D304A431300CA0749 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 6369E28B304A431300CA0749 /* main.js */; };
+		6369E29E304A431300CA0749 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 6369E28C304A431300CA0749 /* manifest.json */; };
+		6369E29F304A431300CA0749 /* hide.css in Resources */ = {isa = PBXBuildFile; fileRef = 6369E28D304A431300CA0749 /* hide.css */; };
+		6369E2A0304A431300CA0749 /* toggle.css in Resources */ = {isa = PBXBuildFile; fileRef = 6369E28E304A431300CA0749 /* toggle.css */; };
+		6369E2A1304A431300CA0749 /* popup.css in Resources */ = {isa = PBXBuildFile; fileRef = 6369E28F304A431300CA0749 /* popup.css */; };
+		6369E2A2304A431300CA0749 /* reviewUrls.json in Resources */ = {isa = PBXBuildFile; fileRef = 6369E290304A431300CA0749 /* reviewUrls.json */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6369E25B304A431300CA0749 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6369E228304A431200CA0749 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6369E258304A431300CA0749;
+			remoteInfo = "YouFocus Extension (iOS)";
+		};
+		6369E265304A431300CA0749 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6369E228304A431200CA0749 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6369E262304A431300CA0749;
+			remoteInfo = "YouFocus Extension (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6369E27C304A431300CA0749 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				6369E25A304A431300CA0749 /* YouFocus Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6369E283304A431300CA0749 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				6369E264304A431300CA0749 /* YouFocus Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		6369E22F304A431200CA0749 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = Base.lproj/Main.html; sourceTree = "<group>"; };
+		6369E230304A431200CA0749 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		6369E231304A431200CA0749 /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
+		6369E232304A431200CA0749 /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
+		6369E233304A431200CA0749 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6369E234304A431300CA0749 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6369E236304A431300CA0749 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		6369E23B304A431300CA0749 /* YouFocus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YouFocus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6369E23E304A431300CA0749 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6369E240304A431300CA0749 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		6369E243304A431300CA0749 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6369E246304A431300CA0749 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6369E248304A431300CA0749 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6369E24D304A431300CA0749 /* YouFocus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YouFocus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6369E24F304A431300CA0749 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6369E252304A431300CA0749 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6369E254304A431300CA0749 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6369E259304A431300CA0749 /* YouFocus Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "YouFocus Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6369E25E304A431300CA0749 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6369E263304A431300CA0749 /* YouFocus Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "YouFocus Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6369E268304A431300CA0749 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6369E288304A431300CA0749 /* popup.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = popup.js; path = ../../dist/popup.js; sourceTree = "<group>"; };
+		6369E289304A431300CA0749 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = images; path = ../../dist/images; sourceTree = "<group>"; };
+		6369E28A304A431300CA0749 /* popup.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = popup.html; path = ../../dist/popup.html; sourceTree = "<group>"; };
+		6369E28B304A431300CA0749 /* main.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = main.js; path = ../../dist/main.js; sourceTree = "<group>"; };
+		6369E28C304A431300CA0749 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = ../../dist/manifest.json; sourceTree = "<group>"; };
+		6369E28D304A431300CA0749 /* hide.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; name = hide.css; path = ../../dist/hide.css; sourceTree = "<group>"; };
+		6369E28E304A431300CA0749 /* toggle.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; name = toggle.css; path = ../../dist/toggle.css; sourceTree = "<group>"; };
+		6369E28F304A431300CA0749 /* popup.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; name = popup.css; path = ../../dist/popup.css; sourceTree = "<group>"; };
+		6369E290304A431300CA0749 /* reviewUrls.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = reviewUrls.json; path = ../../dist/reviewUrls.json; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6369E238304A431300CA0749 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6369E24A304A431300CA0749 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6369E256304A431300CA0749 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6369E260304A431300CA0749 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6369E227304A431200CA0749 = {
+			isa = PBXGroup;
+			children = (
+				6369E22C304A431200CA0749 /* Shared (App) */,
+				6369E235304A431300CA0749 /* Shared (Extension) */,
+				6369E23D304A431300CA0749 /* iOS (App) */,
+				6369E24E304A431300CA0749 /* macOS (App) */,
+				6369E25D304A431300CA0749 /* iOS (Extension) */,
+				6369E267304A431300CA0749 /* macOS (Extension) */,
+				6369E23C304A431300CA0749 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6369E22C304A431200CA0749 /* Shared (App) */ = {
+			isa = PBXGroup;
+			children = (
+				6369E233304A431200CA0749 /* ViewController.swift */,
+				6369E234304A431300CA0749 /* Assets.xcassets */,
+				6369E22D304A431200CA0749 /* Resources */,
+			);
+			path = "Shared (App)";
+			sourceTree = "<group>";
+		};
+		6369E22D304A431200CA0749 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6369E22E304A431200CA0749 /* Main.html */,
+				6369E230304A431200CA0749 /* Icon.png */,
+				6369E231304A431200CA0749 /* Style.css */,
+				6369E232304A431200CA0749 /* Script.js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6369E235304A431300CA0749 /* Shared (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				6369E287304A431300CA0749 /* Resources */,
+				6369E236304A431300CA0749 /* SafariWebExtensionHandler.swift */,
+			);
+			path = "Shared (Extension)";
+			sourceTree = "<group>";
+		};
+		6369E23C304A431300CA0749 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6369E23B304A431300CA0749 /* YouFocus.app */,
+				6369E24D304A431300CA0749 /* YouFocus.app */,
+				6369E259304A431300CA0749 /* YouFocus Extension.appex */,
+				6369E263304A431300CA0749 /* YouFocus Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6369E23D304A431300CA0749 /* iOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				6369E23E304A431300CA0749 /* AppDelegate.swift */,
+				6369E240304A431300CA0749 /* SceneDelegate.swift */,
+				6369E242304A431300CA0749 /* LaunchScreen.storyboard */,
+				6369E245304A431300CA0749 /* Main.storyboard */,
+				6369E248304A431300CA0749 /* Info.plist */,
+			);
+			path = "iOS (App)";
+			sourceTree = "<group>";
+		};
+		6369E24E304A431300CA0749 /* macOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				6369E24F304A431300CA0749 /* AppDelegate.swift */,
+				6369E251304A431300CA0749 /* Main.storyboard */,
+				6369E254304A431300CA0749 /* Info.plist */,
+			);
+			path = "macOS (App)";
+			sourceTree = "<group>";
+		};
+		6369E25D304A431300CA0749 /* iOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				6369E25E304A431300CA0749 /* Info.plist */,
+			);
+			path = "iOS (Extension)";
+			sourceTree = "<group>";
+		};
+		6369E267304A431300CA0749 /* macOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				6369E268304A431300CA0749 /* Info.plist */,
+			);
+			path = "macOS (Extension)";
+			sourceTree = "<group>";
+		};
+		6369E287304A431300CA0749 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6369E288304A431300CA0749 /* popup.js */,
+				6369E289304A431300CA0749 /* images */,
+				6369E28A304A431300CA0749 /* popup.html */,
+				6369E28B304A431300CA0749 /* main.js */,
+				6369E28C304A431300CA0749 /* manifest.json */,
+				6369E28D304A431300CA0749 /* hide.css */,
+				6369E28E304A431300CA0749 /* toggle.css */,
+				6369E28F304A431300CA0749 /* popup.css */,
+				6369E290304A431300CA0749 /* reviewUrls.json */,
+			);
+			name = Resources;
+			path = "Shared (Extension)";
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6369E23A304A431300CA0749 /* YouFocus (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6369E27D304A431300CA0749 /* Build configuration list for PBXNativeTarget "YouFocus (iOS)" */;
+			buildPhases = (
+				6369E237304A431300CA0749 /* Sources */,
+				6369E238304A431300CA0749 /* Frameworks */,
+				6369E239304A431300CA0749 /* Resources */,
+				6369E27C304A431300CA0749 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6369E25C304A431300CA0749 /* PBXTargetDependency */,
+			);
+			name = "YouFocus (iOS)";
+			packageProductDependencies = (
+			);
+			productName = "YouFocus (iOS)";
+			productReference = 6369E23B304A431300CA0749 /* YouFocus.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6369E24C304A431300CA0749 /* YouFocus (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6369E284304A431300CA0749 /* Build configuration list for PBXNativeTarget "YouFocus (macOS)" */;
+			buildPhases = (
+				6369E249304A431300CA0749 /* Sources */,
+				6369E24A304A431300CA0749 /* Frameworks */,
+				6369E24B304A431300CA0749 /* Resources */,
+				6369E283304A431300CA0749 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6369E266304A431300CA0749 /* PBXTargetDependency */,
+			);
+			name = "YouFocus (macOS)";
+			packageProductDependencies = (
+			);
+			productName = "YouFocus (macOS)";
+			productReference = 6369E24D304A431300CA0749 /* YouFocus.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6369E258304A431300CA0749 /* YouFocus Extension (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6369E279304A431300CA0749 /* Build configuration list for PBXNativeTarget "YouFocus Extension (iOS)" */;
+			buildPhases = (
+				6369E255304A431300CA0749 /* Sources */,
+				6369E256304A431300CA0749 /* Frameworks */,
+				6369E257304A431300CA0749 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "YouFocus Extension (iOS)";
+			packageProductDependencies = (
+			);
+			productName = "YouFocus Extension (iOS)";
+			productReference = 6369E259304A431300CA0749 /* YouFocus Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		6369E262304A431300CA0749 /* YouFocus Extension (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6369E280304A431300CA0749 /* Build configuration list for PBXNativeTarget "YouFocus Extension (macOS)" */;
+			buildPhases = (
+				6369E25F304A431300CA0749 /* Sources */,
+				6369E260304A431300CA0749 /* Frameworks */,
+				6369E261304A431300CA0749 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "YouFocus Extension (macOS)";
+			packageProductDependencies = (
+			);
+			productName = "YouFocus Extension (macOS)";
+			productReference = 6369E263304A431300CA0749 /* YouFocus Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6369E228304A431200CA0749 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2660;
+				LastUpgradeCheck = 2660;
+				TargetAttributes = {
+					6369E23A304A431300CA0749 = {
+						CreatedOnToolsVersion = 26.6;
+					};
+					6369E24C304A431300CA0749 = {
+						CreatedOnToolsVersion = 26.6;
+					};
+					6369E258304A431300CA0749 = {
+						CreatedOnToolsVersion = 26.6;
+					};
+					6369E262304A431300CA0749 = {
+						CreatedOnToolsVersion = 26.6;
+					};
+				};
+			};
+			buildConfigurationList = 6369E22B304A431200CA0749 /* Build configuration list for PBXProject "YouFocus" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6369E227304A431200CA0749;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 6369E23C304A431300CA0749 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6369E23A304A431300CA0749 /* YouFocus (iOS) */,
+				6369E24C304A431300CA0749 /* YouFocus (macOS) */,
+				6369E258304A431300CA0749 /* YouFocus Extension (iOS) */,
+				6369E262304A431300CA0749 /* YouFocus Extension (macOS) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6369E239304A431300CA0749 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6369E26B304A431300CA0749 /* Icon.png in Resources */,
+				6369E244304A431300CA0749 /* LaunchScreen.storyboard in Resources */,
+				6369E269304A431300CA0749 /* Main.html in Resources */,
+				6369E26F304A431300CA0749 /* Script.js in Resources */,
+				6369E273304A431300CA0749 /* Assets.xcassets in Resources */,
+				6369E247304A431300CA0749 /* Main.storyboard in Resources */,
+				6369E26D304A431300CA0749 /* Style.css in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6369E24B304A431300CA0749 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6369E26C304A431300CA0749 /* Icon.png in Resources */,
+				6369E26E304A431300CA0749 /* Style.css in Resources */,
+				6369E253304A431300CA0749 /* Main.storyboard in Resources */,
+				6369E270304A431300CA0749 /* Script.js in Resources */,
+				6369E274304A431300CA0749 /* Assets.xcassets in Resources */,
+				6369E26A304A431300CA0749 /* Main.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6369E257304A431300CA0749 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6369E29B304A431300CA0749 /* images in Resources */,
+				6369E29C304A431300CA0749 /* popup.html in Resources */,
+				6369E29E304A431300CA0749 /* manifest.json in Resources */,
+				6369E29A304A431300CA0749 /* popup.js in Resources */,
+				6369E2A1304A431300CA0749 /* popup.css in Resources */,
+				6369E2A0304A431300CA0749 /* toggle.css in Resources */,
+				6369E2A2304A431300CA0749 /* reviewUrls.json in Resources */,
+				6369E29D304A431300CA0749 /* main.js in Resources */,
+				6369E29F304A431300CA0749 /* hide.css in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6369E261304A431300CA0749 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6369E292304A431300CA0749 /* images in Resources */,
+				6369E293304A431300CA0749 /* popup.html in Resources */,
+				6369E295304A431300CA0749 /* manifest.json in Resources */,
+				6369E291304A431300CA0749 /* popup.js in Resources */,
+				6369E298304A431300CA0749 /* popup.css in Resources */,
+				6369E297304A431300CA0749 /* toggle.css in Resources */,
+				6369E299304A431300CA0749 /* reviewUrls.json in Resources */,
+				6369E294304A431300CA0749 /* main.js in Resources */,
+				6369E296304A431300CA0749 /* hide.css in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6369E237304A431300CA0749 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6369E271304A431300CA0749 /* ViewController.swift in Sources */,
+				6369E23F304A431300CA0749 /* AppDelegate.swift in Sources */,
+				6369E241304A431300CA0749 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6369E249304A431300CA0749 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6369E272304A431300CA0749 /* ViewController.swift in Sources */,
+				6369E250304A431300CA0749 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6369E255304A431300CA0749 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6369E275304A431300CA0749 /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6369E25F304A431300CA0749 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6369E276304A431300CA0749 /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6369E25C304A431300CA0749 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6369E258304A431300CA0749 /* YouFocus Extension (iOS) */;
+			targetProxy = 6369E25B304A431300CA0749 /* PBXContainerItemProxy */;
+		};
+		6369E266304A431300CA0749 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6369E262304A431300CA0749 /* YouFocus Extension (macOS) */;
+			targetProxy = 6369E265304A431300CA0749 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6369E22E304A431200CA0749 /* Main.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6369E22F304A431200CA0749 /* Base */,
+			);
+			name = Main.html;
+			sourceTree = "<group>";
+		};
+		6369E242304A431300CA0749 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6369E243304A431300CA0749 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		6369E245304A431300CA0749 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6369E246304A431300CA0749 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6369E251304A431300CA0749 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6369E252304A431300CA0749 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6369E277304A431300CA0749 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6369E278304A431300CA0749 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		6369E27A304A431300CA0749 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2GE6ABMG35;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "YouFocus Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.youfocus.YouFocus.Extension;
+				PRODUCT_NAME = "YouFocus Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6369E27B304A431300CA0749 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2GE6ABMG35;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "YouFocus Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.youfocus.YouFocus.Extension;
+				PRODUCT_NAME = "YouFocus Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6369E27E304A431300CA0749 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2GE6ABMG35;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = YouFocus;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.youfocus.YouFocus;
+				PRODUCT_NAME = YouFocus;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6369E27F304A431300CA0749 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2GE6ABMG35;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = YouFocus;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.youfocus.YouFocus;
+				PRODUCT_NAME = YouFocus;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6369E281304A431300CA0749 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2GE6ABMG35;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "YouFocus Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.youfocus.YouFocus.Extension;
+				PRODUCT_NAME = "YouFocus Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		6369E282304A431300CA0749 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2GE6ABMG35;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "YouFocus Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.youfocus.YouFocus.Extension;
+				PRODUCT_NAME = "YouFocus Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		6369E285304A431300CA0749 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2GE6ABMG35;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = YouFocus;
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.youfocus.YouFocus;
+				PRODUCT_NAME = YouFocus;
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		6369E286304A431300CA0749 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2GE6ABMG35;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = YouFocus;
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.youfocus.YouFocus;
+				PRODUCT_NAME = YouFocus;
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6369E22B304A431200CA0749 /* Build configuration list for PBXProject "YouFocus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6369E277304A431300CA0749 /* Debug */,
+				6369E278304A431300CA0749 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6369E279304A431300CA0749 /* Build configuration list for PBXNativeTarget "YouFocus Extension (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6369E27A304A431300CA0749 /* Debug */,
+				6369E27B304A431300CA0749 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6369E27D304A431300CA0749 /* Build configuration list for PBXNativeTarget "YouFocus (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6369E27E304A431300CA0749 /* Debug */,
+				6369E27F304A431300CA0749 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6369E280304A431300CA0749 /* Build configuration list for PBXNativeTarget "YouFocus Extension (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6369E281304A431300CA0749 /* Debug */,
+				6369E282304A431300CA0749 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6369E284304A431300CA0749 /* Build configuration list for PBXNativeTarget "YouFocus (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6369E285304A431300CA0749 /* Debug */,
+				6369E286304A431300CA0749 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6369E228304A431200CA0749 /* Project object */;
+}
