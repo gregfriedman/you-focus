@@ -1,3 +1,11 @@
 - Test on iOS
+- Add mobile specific classes to hide.css
+- e2e test mobile
+
 - Report issue => Tally form with extension version, browser version, OS (single source, user doesn't have to reveal email, free)
 - Request feature => Tally form
+- Hardening: switch to browser.storage.local to avoid sending data to Google
+  - Negative is that changing it on one machine (or phone) won't transfer to another
+  - Positive is we can say honestly that nothing leaves the computer
+- Hardening: Make the build reproducible and publish the SHA-256 of the release ZIP so anyone can rebuild from the git tag and hash-match the store artifact. Link the git tag matching the installed version, with the ZIP hash, so "the code you read is the code you ran" is checkable rather than asserted.
+- Hardening: Give a 30-second self-verification recipe: open chrome://extensions, enable developer mode, inspect the popup, watch the Network tab stay empty.

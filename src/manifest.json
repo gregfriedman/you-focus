@@ -3,10 +3,12 @@
   "version": "0.13",
   "description": "Hide YouTube distractions like suggested videos, comments, and more with a single click",
   "permissions": ["storage"],
-
+  "content_security_policy": {
+    "extension_pages": "default-src 'self'; object-src 'none'"
+  },
   "content_scripts": [
     {
-      "matches": ["*://www.youtube.com/*"],
+      "matches": ["https://www.youtube.com/*", "https://m.youtube.com/*"],
       "run_at": "document_start",
       "css": ["hide.css"],
       "js": ["main.js"]
